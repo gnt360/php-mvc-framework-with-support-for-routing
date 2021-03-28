@@ -1,0 +1,15 @@
+{
+    "name": "gnt360/php_mvc_framework",
+    "authors": [
+        {
+            "name": "Paul Wombo",
+            "email": "paullordz@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
