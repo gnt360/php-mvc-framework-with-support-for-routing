@@ -24,8 +24,8 @@ $app->router->get('/', 'home');
 $app->router->get('/login', [LoginController::class, 'login']);
 $app->router->post('/login', [LoginController::class, 'handleLogin']);
 
-$app->router->get('/api/login', [AuthController::class, 'login']);
-$app->router->post('/api/login', [AuthController::class, 'login']);
+$app->router->get('/api/logout', [AuthController::class, 'logout']);
+
 
 $app->router->get('/api/register', [AuthController::class, 'register']);
 $app->router->post('/api/register', [AuthController::class, 'register']);
