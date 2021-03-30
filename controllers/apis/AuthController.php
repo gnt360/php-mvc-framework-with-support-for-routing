@@ -30,7 +30,7 @@ class AuthController extends Controller
 
     public function logout()
     {       
-        return $this->render('login');
+        return "true";
     }
 
     public function register(Request $request)
