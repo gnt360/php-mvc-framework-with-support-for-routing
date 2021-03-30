@@ -16,3 +16,23 @@ CREATE TABLE `users` (
 
 
 run php -S localhost:8080 in the public directory to start the project
+
+API end points:
+
+Login : http://localhost:8080/api/login
+params[
+'email',
+'password',
+]
+
+Logout : http://localhost:8080/api/logout
+
+Create : http://localhost:8080/api/register
+params[
+'firstname',
+'lastname',
+'email',
+'password',
+'confirmPassword
+]
+
