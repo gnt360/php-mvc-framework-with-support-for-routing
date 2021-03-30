@@ -1,7 +1,8 @@
 # php-mvc-framework-with-support-for-routing
 
-# Create database in phpMyAdmin and add the credentials to the .env file
-# run this sql in the created database 
+1. run "composer install"
+Create database in phpMyAdmin and add the credentials to the .env file
+run this sql in the created database 
 --
 -- Table structure for table `users`
 --
@@ -15,7 +16,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-run php -S localhost:8080 in the public directory to start the project
+run "php -S localhost:8080 in the public directory to start the project"
 
 API end points:
 
