@@ -41,7 +41,8 @@ class AuthController extends Controller
                 return 'Account successfully created';
             }
            
-            return  $register;
+            return  "account creation failed";
+            //return  $register;
         }
         $this->setLayout('auth');
         return  $register;
