@@ -4,6 +4,7 @@ namespace app\controllers\apis;
 
 use app\models\User;
 use app\core\Request;
+use app\models\Login;
 use app\core\Controller;
 
 /**
@@ -13,34 +14,38 @@ use app\core\Controller;
  */
 class AuthController extends Controller
 {
-    public function login()
+    public function login(Request $request)
     {
+        $login = new Login();
         if ($request->isPost())
         {
-            return 'Logged in';
+            $login->loadData($request->getBody());
+            if ($login->validate() && $login->login()) {
+                
+                return "logged in";
+            }
         }
-        $this->setLayout('auth');
-        return $this->render('login');
+        return "failed";
     }
 
     public function logout()
-    {
-       
+    {       
         return $this->render('login');
     }
 
     public function register(Request $request)
-    {
-        
-        $register = new User();
+    {        
+        $user = new User();
         if ($request->isPost())
         {
-            $register->loadData($request->getBody());
-            if($register->validate() && $register->register())
+            $user->loadData($request->getBody());
+            if($user->validate() && $user->save())
             {
                 return 'Account successfully created';
             }
-           
+           echo '<pre>';
+           var_dump($user);
+           echo '</pre>';
             return  "account creation failed";
             //return  $register;
         }

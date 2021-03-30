@@ -2,6 +2,7 @@
 namespace app\core;
 
 use app\core\Request;
+use app\core\Application;
 /**
  * Class Router
  * @package app\core
@@ -73,7 +74,6 @@ class Router
         ob_start();
         include_once Application::$ROOT_DIR."/views/layouts/$layout.php";
         return ob_get_clean();
-
     }
 
     protected function renderOnlyView($view, $params)

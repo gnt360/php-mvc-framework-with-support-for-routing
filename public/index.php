@@ -22,7 +22,7 @@ $app = new Application(dirname(__DIR__), $config);
  */
 $app->router->get('/', 'home');
 $app->router->get('/login', [LoginController::class, 'login']);
-$app->router->post('/login', [LoginController::class, 'handleLogin']);
+$app->router->post('/login', [LoginController::class, 'login']);
 
 $app->router->get('/api/logout', [AuthController::class, 'logout']);
 
