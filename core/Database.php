@@ -20,6 +20,16 @@ class Database{
 
        $files = scandir(Application::$ROOT_DIR.'/migrations');
        $toApplyMigrations = array_diff($files, $getAppliedMigrations);
+
+       foreach($toApplyMigrations as $migration)
+       {
+           if($migration === '.' || $migration === '..')
+           {
+               continue;
+           }
+
+           require_once Application::$ROOT_DIR.'/migrations/'.$migration;
+       }
        
     }
 
